@@ -1,0 +1,1 @@
+const String hText = 'Hi, \nI\'m Hossam Ahmed \nFlutter Developer';
