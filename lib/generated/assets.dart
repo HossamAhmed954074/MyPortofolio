@@ -3,6 +3,7 @@ class Assets {
   Assets._();
 
   static const String certificationsDepiEnglish = 'assets/images/certifications/depi_english.jpeg';
+   static const String certificationsNtiMobile = 'assets/images/certifications/nti.jpg';
   static const String certificationsDepiMobile = 'assets/images/certifications/depi_mobile.jpeg';
   static const String certificationsDepiTeamLeader = 'assets/images/certifications/depi_team_leader.jpeg';
   static const String certificationsRouteComputer = 'assets/images/certifications/route_computer.jpeg';
@@ -18,6 +19,8 @@ class Assets {
   static const String imagesFlutter = 'assets/images/flutter.png';
   static const String imagesGit = 'assets/images/git.png';
   static const String imagesGithub = 'assets/images/github.png';
+  static const String imagesDrive = 'assets/images/drive.png';
+  static const String imagesPostMan = 'assets/images/post_man.png';
   static const String imagesHive = 'assets/images/hive.png';
   static const String imagesInstagram = 'assets/images/instagram.png';
   static const String imagesIosIcon = 'assets/images/ios_icon.png';
@@ -35,7 +38,7 @@ class Assets {
   static const String projectsNews = 'assets/images/projects/news.jpeg';
   static const String projectsTodoApp = 'assets/images/projects/todo_app.jpeg';
   static const String projectsWeather = 'assets/images/projects/weather.jpeg';
-    static const String projectsBooklyApp = 'assets/images/projects/bookly_app.jpg';
+  static const String projectsBooklyApp = 'assets/images/projects/bookly_app.jpg';
 
 
 }

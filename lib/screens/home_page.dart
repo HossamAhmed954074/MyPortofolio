@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hossam_pr/constant/colors.dart';
-import 'package:hossam_pr/utils/project_utils.dart';
-import 'package:hossam_pr/widgets/project_card_item.dart';
+import 'package:hossam_pr/widgets/certifactions_section.dart';
+import 'package:hossam_pr/widgets/project_section.dart';
 import 'package:hossam_pr/widgets/skills_body.dart';
 import '../constant/size.dart';
 import '../widgets/drawer_mobile.dart';
@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
           body: ListView(
             scrollDirection: Axis.vertical,
             children: [
-              // main
+              // Header
               if (constraints.maxWidth >= kMinDesktopWidth)
                 HeaderDesktop()
               else
@@ -37,6 +37,7 @@ class HomePage extends StatelessWidget {
                     scaffoldKey.currentState?.openEndDrawer();
                   },
                 ),
+                // Main
               if (constraints.maxWidth >= kMinDesktopWidth)
                 MainDesktop(screenSize: screenSize)
               else
@@ -46,39 +47,12 @@ class HomePage extends StatelessWidget {
               SkillsBody(screenWidth: screenWidth, constraints: constraints),
 
               // Projects
-              Container(
-                padding: EdgeInsets.fromLTRB(25, 20, 25, 60),
-                width: screenWidth,
-                child: Column(
-                  children: [
-                    const Text(
-                      'What Projects ',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: CustomColors.whitePrimary,
-                      ),
-                    ),
-                    SizedBox(height: 20),
+              ProjectSectionBody(screenWidth: screenWidth),
 
-                    // work project Card
-                    Wrap(
-                      spacing: 25,
-                      runSpacing: 25,
-                      children: [
-                        for (
-                          int i = 0;
-                          i < ProjectUtils.myProjectUtils.length;
-                          i++
-                        )
-                          ProjectCardItem(
-                            projectUtils: ProjectUtils.myProjectUtils[i],
-                          ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
+               // Certifactions
+              CertifactionsSectionBody(screenWidth: screenWidth),
+
+
               // Contact
               Container(
                 height: 500,

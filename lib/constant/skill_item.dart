@@ -48,16 +48,21 @@ const List<Map> skillItems = [
     'img' : Assets.imagesHive,
     'title' : 'Hive'
   },
-  {
-    'img' : Assets.imagesJetpackCompose,
-    'title' : 'JetPack Compose'
-  },
+  
   {
     'img' : Assets.imagesGit,
     'title' : 'Git'
   },
+   {
+    'img' : Assets.imagesPostMan,
+    'title' : 'Post Man'
+  },
   {
     'img' : Assets.imagesBloc,
     'title' : 'Bloc'
+  },
+  {
+    'img' : Assets.imagesJetpackCompose,
+    'title' : 'JetPack Compose'
   },
 ];
