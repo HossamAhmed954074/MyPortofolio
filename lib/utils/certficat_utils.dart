@@ -39,7 +39,7 @@ class CertficatUtils {
       certLink: 'https://drive.google.com/file/d/1Xhkrj5L_LclDetjngrvPL4CFfvypqnMY/view?usp=sharing',
     ),
       CertficatUtils(
-      image: Assets.certificationsNtiMobile,
+      image: Assets.certificationsNti,
       title: 'Mobile App Development',
       supTitle: 'Ministry of Communications and Information Technology Of Egypt (NTI)',
       certLink: 'https://drive.google.com/file/d/1Xhkrj5L_LclDetjngrvPL4CFfvypqnMY/view?usp=sharing',

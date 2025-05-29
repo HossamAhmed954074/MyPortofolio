@@ -6,8 +6,9 @@ import '../constant/texts.dart';
 import '../generated/assets.dart';
 
 class MainDesktop extends StatelessWidget {
-  const MainDesktop({super.key, required this.screenSize});
+  const MainDesktop({super.key, required this.screenSize, required this.onNavItemTap});
   final Size screenSize;
+  final Function() onNavItemTap;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,7 +34,7 @@ class MainDesktop extends StatelessWidget {
               SizedBox(
                 width: 250,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: onNavItemTap,
                   child: Text('Get in Touch'),
                 ),
               ),

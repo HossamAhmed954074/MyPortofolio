@@ -5,8 +5,9 @@ import '../constant/texts.dart';
 import '../generated/assets.dart';
 
 class MainPhone extends StatelessWidget {
-  const MainPhone({super.key, required this.screenSize});
+  const MainPhone({super.key, required this.screenSize, required this.onNavItemTap});
   final Size screenSize;
+  final Function() onNavItemTap;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -42,7 +43,7 @@ class MainPhone extends StatelessWidget {
                   SizedBox(
                     width: 190,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: onNavItemTap,
                       child: Text('Get in Touch'),
                     ),
                   ),

@@ -2,6 +2,7 @@ import 'dart:js_interop_unsafe';
 
 import 'package:flutter/material.dart';
 import 'package:hossam_pr/constant/colors.dart';
+import 'package:hossam_pr/generated/assets.dart';
 import 'package:hossam_pr/utils/project_utils.dart';
 import 'dart:js_interop' as js;
 
@@ -86,7 +87,7 @@ class ProjectCardItem extends StatelessWidget {
                       );
                     },
                     child: Image.asset(
-                      'assets/images/github.png',
+                      Assets.imagesGithub,
                       height: 20,
                       width: 20,
                     ),

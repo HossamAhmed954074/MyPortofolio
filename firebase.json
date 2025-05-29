@@ -1,0 +1,33 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "hossam-por",
+          "appId": "1:442296758907:android:48ab8781ff63a96cef28de",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "hossam-por",
+          "configurations": {
+            "android": "1:442296758907:android:48ab8781ff63a96cef28de",
+            "ios": "1:442296758907:ios:e8e10d7daa8cb123ef28de",
+            "macos": "1:442296758907:ios:e8e10d7daa8cb123ef28de",
+            "web": "1:442296758907:web:61d3cb5476f7075bef28de",
+            "windows": "1:442296758907:web:7ccaf6fe4982d76cef28de"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

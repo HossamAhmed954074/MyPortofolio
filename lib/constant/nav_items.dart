@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-List<String> navItem = ['Home', 'Skills', 'Projects', 'Blog', 'Content'];
+List<String> navItem = ['Home', 'Skills', 'Projects', 'Certificate', 'Contact'];
 List<IconData> navIcon = [
   Icons.home,
   Icons.handyman_outlined,
