@@ -8,6 +8,7 @@ import 'package:hossam_pr/widgets/main_desktop.dart';
 import 'package:hossam_pr/widgets/main_phone.dart';
 import 'package:hossam_pr/widgets/project_section.dart';
 import 'package:hossam_pr/widgets/skills_body.dart';
+import 'package:hossam_pr/widgets/enhanced_footer.dart';
 import '../constant/size.dart';
 import '../widgets/drawer_mobile.dart';
 
@@ -19,139 +20,183 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
   final scrollController = ScrollController();
-
   final List<GlobalKey> navBarKeys = List.generate(5, (index) => GlobalKey());
-  int index = 0;
+  int currentIndex = 0;
+  bool showBackToTop = false;
+
+  @override
+  void initState() {
+    super.initState();
+    scrollController.addListener(_onScroll);
+  }
+
+  @override
+  void dispose() {
+    scrollController.removeListener(_onScroll);
+    scrollController.dispose();
+    super.dispose();
+  }
+
+  void _onScroll() {
+    // Show/hide back to top button
+    setState(() {
+      showBackToTop = scrollController.offset > 300;
+    });
+  }
 
   void scrollToSection(int navIndex) {
-    if (navIndex == 5) {
-      return;
-    }
+    if (navIndex >= navBarKeys.length) return;
+
     final key = navBarKeys[navIndex];
-    Scrollable.ensureVisible(
-      key.currentContext!,
-      duration: Duration(microseconds: 500),
-      curve: Curves.easeInOut,
+    if (key.currentContext != null) {
+      Scrollable.ensureVisible(
+        key.currentContext!,
+        duration: const Duration(milliseconds: 800),
+        curve: Curves.easeInOutCubic,
+      );
+      setState(() {
+        currentIndex = navIndex;
+      });
+    }
+  }
+
+  void _scrollToTop() {
+    scrollController.animateTo(
+      0,
+      duration: const Duration(milliseconds: 800),
+      curve: Curves.easeInOutCubic,
     );
+    setState(() {
+      currentIndex = 0;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
+
     return LayoutBuilder(
       builder: (context, constraints) {
         return Scaffold(
           key: scaffoldKey,
-          backgroundColor: CustomColors.scffoldBg,
+          backgroundColor: CustomColors.scaffoldBg,
           endDrawer:
               constraints.maxWidth >= kMinDesktopWidth
                   ? null
                   : DrawerMobile(
-                    onNavItemTap: (p0) {
-                      scaffoldKey.currentState?.closeEndDrawer();
-                      scrollToSection(p0);
-                      setState(() {
-                        index = p0;
-                      });
+                    onNavItemTap: (index) {
+                      Navigator.of(context).pop();
+                      scrollToSection(index);
                     },
                   ),
-          body: SingleChildScrollView(
-            controller: scrollController,
-            scrollDirection: Axis.vertical,
-            child: Column(
-              children: [
-                SizedBox(key: navBarKeys.first),
-                // Header
-                if (constraints.maxWidth >= kMinDesktopWidth)
-                  HeaderDesktop(
-                    onNavItemTap: (p0) {
-                      scrollToSection(p0);
-                      setState(() {
-                        index = p0;
-                      });
-                    },
-                  )
-                else
-                  HeaderMobile(
-                    onLogoTap: () {},
-                    onMenuTap: () {
-                      scaffoldKey.currentState?.openEndDrawer();
-                    },
-                  ),
-                // Main
-                if (constraints.maxWidth >= kMinDesktopWidth)
-                  MainDesktop(
-                    screenSize: screenSize,
-                    onNavItemTap: () {
-                      scrollToSection(4);
-                      setState(() {
-                        index = 4;
-                      });
-                    },
-                  )
-                else
-                  MainPhone(
-                    screenSize: screenSize,
-                    onNavItemTap: () {
-                      scrollToSection(4);
-                      setState(() {
-                        index = 4;
-                      });
-                    },
-                  ),
+          body: Stack(
+            children: [
+              // Main Content
+              SingleChildScrollView(
+                controller: scrollController,
+                physics: const ClampingScrollPhysics(),
+                child: Column(
+                  children: [
+                    // Anchor for home section
+                    Container(key: navBarKeys[0], height: 1),
 
-                // Skills
-                SkillsBody(
-                  screenWidth: screenWidth,
-                  constraints: constraints,
-                  key: navBarKeys[1],
-                ),
+                    // Header
+                    if (constraints.maxWidth >= kMinDesktopWidth)
+                      HeaderDesktop(onNavItemTap: scrollToSection)
+                    else
+                      HeaderMobile(
+                        onLogoTap: _scrollToTop,
+                        onMenuTap: () {
+                          scaffoldKey.currentState?.openEndDrawer();
+                        },
+                      ),
 
-                // Projects
-                ProjectSectionBody(
-                  screenWidth: screenWidth,
-                  key: navBarKeys[2],
-                ),
+                    // Hero Section
+                    if (constraints.maxWidth >= kMinDesktopWidth)
+                      MainDesktop(
+                        screenSize: screenSize,
+                        onNavItemTap: () => scrollToSection(4),
+                      )
+                    else
+                      MainPhone(
+                        screenSize: screenSize,
+                        onNavItemTap: () => scrollToSection(4),
+                      ),
 
-                // Certifactions
-                CertifactionsSectionBody(
-                  screenWidth: screenWidth,
-                  key: navBarKeys[3],
-                ),
-
-                // Contact
-                ContactSectionBody(key: navBarKeys[4]),
-                // Footer
-                Container(
-                  padding: EdgeInsets.fromLTRB(25, 20, 25, 20),
-                  width: double.maxFinite,
-                  color: CustomColors.bgLight1,
-                  child: Column(
-                    children: [Text('Created By Hossam Ahmed Mahmoud ❤️')],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          floatingActionButton:
-              index > 0
-                  ? FloatingActionButton(
-                    backgroundColor: CustomColors.hintDark,
-                    onPressed: () {
-                      scrollToSection(0);
-                      setState(() {
-                        index = 0;
-                      });
-                    },
-                    child: Icon(
-                      Icons.arrow_circle_up_outlined,
-                      color: Colors.white,
+                    // Skills Section
+                    SkillsBody(
+                      screenWidth: screenWidth,
+                      constraints: constraints,
+                      key: navBarKeys[1],
                     ),
-                  )
-                  : null,
+
+                    // Projects Section
+                    ProjectSectionBody(
+                      screenWidth: screenWidth,
+                      key: navBarKeys[2],
+                    ),
+
+                    // Certifications Section
+                    CertificationsSectionBody(
+                      screenWidth: screenWidth,
+                      key: navBarKeys[3],
+                    ),
+
+                    // Contact Section
+                    ContactSectionBody(key: navBarKeys[4]),
+
+                    // Enhanced Footer
+                    const EnhancedFooter(),
+                  ],
+                ),
+              ),
+
+              // Back to Top Button
+              if (showBackToTop)
+                Positioned(
+                  bottom: 32,
+                  right: 32,
+                  child: TweenAnimationBuilder<double>(
+                    duration: const Duration(milliseconds: 200),
+                    tween: Tween(begin: 0.0, end: 1.0),
+                    builder: (context, value, child) {
+                      return Transform.scale(
+                        scale: value,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            gradient: const LinearGradient(
+                              colors: CustomColors.primaryGradient,
+                            ),
+                            borderRadius: BorderRadius.circular(28),
+                            boxShadow: [
+                              BoxShadow(
+                                color: CustomColors.accentPrimary.withAlpha(
+                                  (255 * 0.3).round(),
+                                ),
+                                blurRadius: 15,
+                                offset: const Offset(0, 6),
+                              ),
+                            ],
+                          ),
+                          child: FloatingActionButton(
+                            onPressed: _scrollToTop,
+                            backgroundColor: Colors.transparent,
+                            elevation: 0,
+                            child: const Icon(
+                              Icons.keyboard_arrow_up,
+                              color: Colors.black,
+                              size: 28,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+            ],
+          ),
         );
       },
     );

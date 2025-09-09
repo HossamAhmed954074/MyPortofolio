@@ -2,70 +2,67 @@
 class Assets {
   Assets._();
 
-  static const String certificationsDepiEnglish = 'lib/assets/images/certifications/depi_english.jpeg';
-  static const String certificationsDepiMobile = 'lib/assets/images/certifications/depi_mobile.jpeg';
-  static const String certificationsDepiTeamLeader = 'lib/assets/images/certifications/depi_team_leader.jpeg';
-  static const String certificationsNti = 'lib/assets/images/certifications/nti.jpg';
-  static const String certificationsRouteComputer = 'lib/assets/images/certifications/route_computer.jpeg';
-  static const String certificationsUdemy = 'lib/assets/images/certifications/udemy.jpg';
-  static const String certificationsZagFlutter = 'lib/assets/images/certifications/zag_flutter.jpeg';
-  static const String constantColors = 'lib/constant/colors.dart';
-  static const String constantNavItems = 'lib/constant/nav_items.dart';
-  static const String constantSize = 'lib/constant/size.dart';
-  static const String constantSkillItem = 'lib/constant/skill_item.dart';
-  static const String constantTexts = 'lib/constant/texts.dart';
-  static const String generatedAssets = 'lib/generated/assets.dart';
-  static const String imagesAndroidIcon = 'lib/assets/images/android_icon.png';
-  static const String imagesBloc = 'lib/assets/images/bloc.png';
-  static const String imagesCPlusPlus = 'lib/assets/images/c_plus_plus.png';
-  static const String imagesDart = 'lib/assets/images/dart.png';
-  static const String imagesDesktopIcon = 'lib/assets/images/desktop_icon.png';
-  static const String imagesDrive = 'lib/assets/images/drive.png';
-  static const String imagesFacebook = 'lib/assets/images/facebook.png';
-  static const String imagesFirebase = 'lib/assets/images/firebase.png';
-  static const String imagesFlutter = 'lib/assets/images/flutter.png';
-  static const String imagesGit = 'lib/assets/images/git.png';
-  static const String imagesGithub = 'lib/assets/images/github.png';
-  static const String imagesHive = 'lib/assets/images/hive.png';
-  static const String imagesInstagram = 'lib/assets/images/instagram.png';
-  static const String imagesIosIcon = 'lib/assets/images/ios_icon.png';
-  static const String imagesJava = 'lib/assets/images/java.png';
-  static const String imagesJetpackCompose = 'lib/assets/images/jetpack_compose.png';
-  static const String imagesKotlin = 'lib/assets/images/kotlin.png';
-  static const String imagesLinkedin = 'lib/assets/images/linkedin.png';
-  static const String imagesLogo = 'lib/assets/images/logo.jpg';
-  static const String imagesMe = 'lib/assets/images/me.jpeg';
-  static const String imagesPostMan = 'lib/assets/images/post_man.png';
-  static const String imagesTelegram = 'lib/assets/images/telegram.png';
-  static const String imagesWebIcon = 'lib/assets/images/web_icon.png';
-  static const String imagesWhatSapp = 'lib/assets/images/what_sapp.png';
-  static const String imagesYouTube = 'lib/assets/images/you_tube.png';
-  static const String libFirebaseOptions = 'lib/firebase_options.dart';
-  static const String libMain = 'lib/main.dart';
-  static const String projectsBooklyApp = 'lib/assets/images/projects/bookly_app.jpg';
-  static const String projectsCharacterMoves = 'lib/assets/images/projects/character_moves.jpeg';
-  static const String projectsChat = 'lib/assets/images/projects/chat.jpeg';
-  static const String projectsLoopi = 'lib/assets/images/projects/loopi.jpeg';
-  static const String projectsNews = 'lib/assets/images/projects/news.jpeg';
-  static const String projectsTodoApp = 'lib/assets/images/projects/todo_app.jpeg';
-  static const String projectsWeather = 'lib/assets/images/projects/weather.jpeg';
-  static const String screensHomePage = 'lib/screens/home_page.dart';
-  static const String stylesStyle = 'lib/styles/style.dart';
-  static const String utilsCertficatUtils = 'lib/utils/certficat_utils.dart';
-  static const String utilsProjectUtils = 'lib/utils/project_utils.dart';
-  static const String widgetsCertCardItem = 'lib/widgets/cert_card_item.dart';
-  static const String widgetsCertifactionsSection = 'lib/widgets/certifactions_section.dart';
-  static const String widgetsContactSection = 'lib/widgets/contact_section.dart';
-  static const String widgetsDrawerMobile = 'lib/widgets/drawer_mobile.dart';
-  static const String widgetsHeaderDesctop = 'lib/widgets/header_desctop.dart';
-  static const String widgetsHeaderMobile = 'lib/widgets/header_mobile.dart';
-  static const String widgetsMainDesktop = 'lib/widgets/main_desktop.dart';
-  static const String widgetsMainPhone = 'lib/widgets/main_phone.dart';
-  static const String widgetsProjectCardItem = 'lib/widgets/project_card_item.dart';
-  static const String widgetsProjectSection = 'lib/widgets/project_section.dart';
-  static const String widgetsSiteLogo = 'lib/widgets/site_logo.dart';
-  static const String widgetsSkillsBody = 'lib/widgets/skills_body.dart';
-  static const String widgetsSkillsDesctop = 'lib/widgets/skills_desctop.dart';
-  static const String widgetsSkillsPhone = 'lib/widgets/skills_phone.dart';
+  static const String certificationsDepiEnglish =
+      'assets/images/certifications/depi_english.jpeg';
+  static const String certificationsDepiMobile =
+      'assets/images/certifications/depi_mobile.jpeg';
+  static const String certificationsDepiTeamLeader =
+      'assets/images/certifications/depi_team_leader.jpeg';
+  static const String certificationsNti =
+      'assets/images/certifications/nti.jpg';
+  static const String certificationsRouteComputer =
+      'assets/images/certifications/route_computer.jpeg';
+  static const String certificationsUdemy =
+      'assets/images/certifications/udemy.jpg';
+  static const String certificationsZagFlutter =
+      'assets/images/certifications/zag_flutter.jpeg';
+  static const String imagesAndroidIcon = 'assets/images/android_icon.png';
+  static const String imagesBloc = 'assets/images/bloc.png';
+  static const String imagesCPlusPlus = 'assets/images/c_plus_plus.png';
+  static const String imagesDart = 'assets/images/dart.png';
+  static const String imagesDesktopIcon = 'assets/images/desktop_icon.png';
+  static const String imagesDrive = 'assets/images/drive.png';
+  static const String imagesFacebook = 'assets/images/facebook.png';
+  static const String imagesFirebase = 'assets/images/firebase.png';
+  static const String imagesFlutter = 'assets/images/flutter.png';
+  static const String imagesGit = 'assets/images/git.png';
+  static const String imagesGithub = 'assets/images/github.png';
+  static const String imagesHive = 'assets/images/hive.png';
+  static const String imagesInstagram = 'assets/images/instagram.png';
+  static const String imagesIosIcon = 'assets/images/ios_icon.png';
+  static const String imagesJava = 'assets/images/java.png';
+  static const String imagesJetpackCompose =
+      'assets/images/jetpack_compose.png';
+  static const String imagesKotlin = 'assets/images/kotlin.png';
+  static const String imagesLinkedin = 'assets/images/linkedin.png';
+  static const String imagesLogo = 'assets/images/logo.jpg';
+  static const String imagesMe = 'assets/images/me.jpeg';
+  static const String imagesPostMan = 'assets/images/post_man.png';
+  static const String imagesTelegram = 'assets/images/telegram.png';
+  static const String imagesWebIcon = 'assets/images/web_icon.png';
+  static const String imagesWhatSapp = 'assets/images/what_sapp.png';
+  static const String imagesYouTube = 'assets/images/you_tube.png';
+  static const String projectsBooklyApp =
+      'assets/images/projects/bookly_app.jpg';
+  static const String projectsCharacterMoves =
+      'assets/images/projects/character_moves.jpeg';
+  static const String projectsChat = 'assets/images/projects/chat.jpeg';
+  static const String projectsLoopi = 'assets/images/projects/loopi.jpeg';
+  static const String projectsNews = 'assets/images/projects/news.jpeg';
+  static const String projectsTodoApp = 'assets/images/projects/todo_app.jpeg';
+  static const String projectsWeather = 'assets/images/projects/weather.jpeg';
+  static const String projectsAflam =
+      'assets/images/projects/aflamposter.png';
+  static const String projectsRestaurantApp =
+      'assets/images/projects/restorunt.jpg';
+
+  static const String projectsQuizMinds =
+      'assets/images/projects/quizminds.jpeg';
+
+  static const String projectsEcommerceApp =
+      'assets/images/projects/ecomerce.jpeg';
+
+  static const String projectsPortfolioApp =
+      'assets/images/projects/portfolio.png';
 
 }
