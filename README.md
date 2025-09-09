@@ -440,4 +440,6 @@ Permission is hereby granted, free of charge, to any person obtaining a copy...
 
 **Last Updated**: December 2024 | **Version**: 1.0.0
 
+![Screenshot from 2025-07-02 16-14-36](https://github.com/user-attachments/assets/1b5ce97c-d1cc-452b-b1fe-db2471326364)
+
 </div>
